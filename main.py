@@ -50,6 +50,10 @@ def keepRNA():
             RNACode.append(inputCode[i])
     else:
         translateRNA(inputCode)
+    
+def draw(code1,code2):
+    print("+"+"#"+code1+"-"+code2+"#"+"+")
+    print("|     |")
 
 def main():
     global RNACode
@@ -61,6 +65,10 @@ def main():
         keepRNA()
         print(RNACode)
         transcriptionProtein()
+        print("")
+        if canCalculateBool==True:
+            for x in range(0, len(inputCode),2):
+                draw(inputCode[x],inputCode[x+1])
     elif canCalculateBool == False:
         continueInput = input("Input cannot be translated into codons. Continue with translation into RNA? Y/n")
         if continueInput == "Y" or continueInput == "y":
